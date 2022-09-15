@@ -1,3 +1,5 @@
+import productComVue from '@/components/productCom.vue'
+import productsComVue from '@/components/productsCom.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
@@ -8,6 +10,17 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView
+    },
+    {
+      path: '/products',
+      name: 'products',
+      component: productsComVue,
+    },
+    {
+      path: '/product/:id',
+      name: 'product',
+      component: productComVue,
+      props: true
     },
     {
       path: '/about',

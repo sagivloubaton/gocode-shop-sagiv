@@ -1,15 +1,20 @@
-<script setup lang="ts"></script>
-
+<script lang="ts">
+import { defineComponent, type PropType } from "vue";
+import type { productType } from "../types/product";
+export default defineComponent({
+  props: {
+    product: Object as PropType<productType>,
+  },
+});
+</script>
 <template>
   <div class="product-card">
     <div class="product-image">
-      <img
-        src="https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369"
-      />
+      <img :src="product?.image" />
     </div>
     <div class="product-info">
-      <h5>Winter Jacket</h5>
-      <h6>$99.99</h6>
+      <h5>{{ product?.title }}</h5>
+      <h6>{{ product?.price }}</h6>
     </div>
   </div>
 </template>

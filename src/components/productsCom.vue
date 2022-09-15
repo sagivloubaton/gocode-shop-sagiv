@@ -1,18 +1,22 @@
-<script setup lang="ts">
+<script lang="ts">
 import productCom from "./productCom.vue";
+import { defineComponent, type PropType } from "vue";
+import type { productType } from "../types/product";
+export default defineComponent({
+  props: {
+    productsList: Object as PropType<productType[]>,
+  },
+  components: { productCom },
+});
 </script>
 
 <template>
   <section class="products">
-    <productCom />
-    <productCom />
-    <productCom />
-    <productCom />
-    <productCom />
-    <productCom />
-    <productCom />
-    <productCom />
-    <productCom />
+    <productCom
+      v-for="product in productsList"
+      :product="product"
+      :key="product.id"
+    />
   </section>
 </template>
 
