@@ -1,11 +1,8 @@
-<script lang="ts">
+<script setup lang="ts">
 import { defineComponent, type PropType } from "vue";
 import type { productType } from "../types/product";
-export default defineComponent({
-  props: {
-    product: Object as PropType<productType>,
-  },
-});
+
+const props = defineProps(["product"]);
 </script>
 <template>
   <div class="product-card">

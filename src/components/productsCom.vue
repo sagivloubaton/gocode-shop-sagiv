@@ -1,13 +1,9 @@
-<script lang="ts">
+<script setup lang="ts">
 import productCom from "./productCom.vue";
-import { defineComponent, type PropType } from "vue";
+import type { PropType } from "vue";
 import type { productType } from "../types/product";
-export default defineComponent({
-  props: {
-    productsList: Object as PropType<productType[]>,
-  },
-  components: { productCom },
-});
+
+const props = defineProps(["productsList"]);
 </script>
 
 <template>

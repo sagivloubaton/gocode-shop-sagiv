@@ -11,3 +11,13 @@ type ratingType = {
     rate: string,
     count: number
 }
+type productInCartType = {
+    id: number,
+    title: string,
+    price: number,
+    description: string,
+    category: string,
+    image: string,
+    rating: ratingType,
+    quantity: number
+}
